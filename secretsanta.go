@@ -25,6 +25,9 @@ func main() {
 	for i := 1; i <= groupsize; i++ {
 		rand.Seed(time.Now().UnixNano())
 		rand.Shuffle(len(people), func(i, j int) { people[i], people[j] = people[j], people[i] })
+		for e := 0; e < len(people); e++ {
 		fmt.Println("Group ", i, people[0], " buys for ", people[1])
+		people = people[2:]
   }
-}
+		}
+	}
