@@ -3,7 +3,6 @@ package main
 import (
 	"fmt"
 	"math/rand"
-	"os"
 	"time"
 )
 
@@ -14,6 +13,8 @@ func main() {
 	var people [] string
 	var arrone [] string
 	var arrtwo [] string
+	var odd bool
+	
 
 	x := 0
 	y := 1
@@ -22,8 +23,7 @@ func main() {
 	fmt.Scanln(&peoplecount)
 	groupsize := peoplecount / 2
 	if peoplecount%2 != 0 {
-		fmt.Println("You need an even number of people to make groups")
-		os.Exit(0)
+		odd = true
 	}
 
 	for i := 1; i <= peoplecount; i++ {
@@ -57,5 +57,10 @@ func main() {
 		arrtwo = append(arrtwo[:randnumone], arrtwo[randnumone+1:]...)
 		arrone = append(arrone[:randnumtwo], arrone[randnumtwo+1:]...)
     }
+		if odd == true {
+			oddnum := (people[len(people)-1])
+			people = people[:len(people)-1]
+			fmt.Println(oddnum, " buys for ", people[rand.Intn(len(people))])
+		}
 		fmt.Println("***************")
 }
