@@ -15,7 +15,6 @@ func main() {
 	var arrtwo [] string
 	var odd bool
 	
-
 	x := 0
 	y := 1
 
@@ -57,6 +56,7 @@ func main() {
 		arrtwo = append(arrtwo[:randnumone], arrtwo[randnumone+1:]...)
 		arrone = append(arrone[:randnumtwo], arrone[randnumtwo+1:]...)
     }
+		
 		if odd == true {
 			oddnum := (people[len(people)-1])
 			people = people[:len(people)-1]
